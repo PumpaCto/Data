@@ -1,0 +1,37 @@
+{
+  "name": "miraverse-token",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "chart.js": "^4.4.0",
+    "framer-motion": "^10.16.1",
+    "next": "14.1.4",
+    "postcss": "^8.4.35",
+    "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
+    "react-hook-form": "^7.45.1",
+    "react-icons": "^4.12.0",
+    "react-scroll": "^1.8.9",
+    "tailwindcss": "^3.4.1",
+    "clsx": "^2.1.0",
+    "swiper": "^11.1.2",
+    "swr": "^2.2.0",
+    "luxon": "^3.4.4",
+    "react-countup": "^6.3.0"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.1.4",
+    "prettier": "^3.2.5"
+  }
+}
