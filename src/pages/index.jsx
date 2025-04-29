@@ -1,38 +1,40 @@
-"use client";
+// src/pages/index.jsx
 
 import Head from "next/head";
-import HeroSection from "@/components/HeroSection";
-import Roadmap from "@/components/Roadmap";
-import Tokenomics from "@/components/Tokenomics";
-import NFTGallery from "@/components/NFTGallery";
-import CommunitySection from "@/components/CommunitySection";
-import PartnerSection from "@/components/PartnerSection";
-import FAQSection from "@/components/FAQSection";
-import BlogPreview from "@/components/BlogPreview";
-import AnimatedStats from "@/components/AnimatedStats";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+// Bileşenleri dinamik importla yükle (performans için)
+const HeroSection = dynamic(() => import("@/components/HeroSection"), { ssr: false });
+// Gelecekte eklenebilecek bileşenler aşağıda hazır şekilde
+// const Features = dynamic(() => import("@/components/Features"));
+// const Roadmap = dynamic(() => import("@/components/Roadmap"));
+// const JoinCommunity = dynamic(() => import("@/components/CommunitySection"));
+
+export default function HomePage() {
   return (
     <>
       <Head>
-        <title>MiraVerse Token - Home</title>
-        <meta name="description" content="Discover the MiraVerse Token: The future of anime, AI, and crypto combined." />
+        <title>MiraVerse Token | The Future of Crypto</title>
+        <meta name="description" content="MiraVerse Token is a visionary project combining anime storytelling, crypto technology, and AI-powered decentralized applications." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
+        <meta name="keywords" content="MiraVerse, Crypto, Token, AI, Anime, Blockchain, Pump.fun" />
+        <meta property="og:title" content="MiraVerse Token" />
+        <meta property="og:description" content="Where anime meets crypto innovation." />
+        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:url" content="https://miraversetoken.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" content="#FFD700" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center min-h-screen w-full bg-black text-white transition-colors duration-300">
         <HeroSection />
-        <AnimatedStats />
-        <Roadmap />
-        <Tokenomics />
-        <NFTGallery />
-        <CommunitySection />
-        <PartnerSection />
-        <FAQSection />
-        <BlogPreview />
-        <Footer />
+
+        {/* Gelecekte eklemek için hazır bileşen alanları */}
+        {/* <Features /> */}
+        {/* <Roadmap /> */}
+        {/* <JoinCommunity /> */}
       </main>
     </>
   );
