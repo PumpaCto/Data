@@ -1,23 +1,30 @@
-export const blogData = [
+// src/data/blogData.js
+
+const blogData = [
   {
-    title: "MiraVerse Token Launch: The New Frontier",
-    slug: "miraverse-token-launch",
-    excerpt: "MiraVerse Token officially launches, bringing a new fusion of anime culture, gaming, and blockchain innovation.",
-    date: "May 10, 2025",
+    id: 1,
+    title: "The Rise of MiraVerse Token",
+    date: "2025-07-01",
     image: "/images/blog/launch.jpg",
+    description: "Discover how MiraVerse Token is redefining the future of crypto through anime, AI, and community-driven innovation.",
+    slug: "rise-of-miraverse-token"
   },
   {
-    title: "Inside the MiraVerse Game: What to Expect",
-    slug: "inside-miraverse-game",
-    excerpt: "An exclusive look into MiraVerse’s interactive decision-based crypto trader game set to release Q3 2025.",
-    date: "August 5, 2025",
+    id: 2,
+    title: "A Sneak Peek Into Our Game",
+    date: "2025-08-15",
     image: "/images/blog/game-preview.jpg",
+    description: "Explore the revolutionary crypto trading game featuring AI choices, anime dynamics, and real crypto rewards.",
+    slug: "game-preview"
   },
   {
-    title: "Crypto Anime Series: Blending Art with Blockchain",
-    slug: "crypto-anime-series",
-    excerpt: "Discover how MiraVerse is producing the first major crypto-themed anime series, aiming for early 2026 release.",
-    date: "December 20, 2025",
+    id: 3,
+    title: "Anime Series Coming Soon",
+    date: "2026-01-10",
     image: "/images/blog/anime-series.jpg",
+    description: "Our original crypto anime series launches soon on top anime platforms. Be part of the story!",
+    slug: "anime-series-coming"
   }
 ];
+
+export default blogData;
