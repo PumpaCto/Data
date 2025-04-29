@@ -13,13 +13,13 @@ const motivationalQuotes = [
   "Crypto evolution starts here."
 ];
 
+// Navigation Links (Twitter kaldırıldı)
 const navigationLinks = [
   { name: "Roadmap", href: "/roadmap" },
   { name: "Tokenomics", href: "/tokenomics" },
   { name: "Community", href: "/community" },
   { name: "NFTs", href: "/nft" },
-  { name: "Contact", href: "/contact" },
-  { name: "Twitter", href: "https://x.com/MiraVersaToken" }
+  { name: "Contact", href: "/contact" }
 ];
 
 export default function HeroSection() {
