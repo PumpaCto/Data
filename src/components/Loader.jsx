@@ -1,38 +1,73 @@
-"use client";
+// src/components/Loader.jsx
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const Loader = () => {
+const loadingTexts = [
+  "Loading MiraVerse Universe...",
+  "Initializing Crypto Anime Engine...",
+  "Booting AI Blockchain Core...",
+  "Synchronizing with Pump.fun Network...",
+  "Preparing NFT Reality..."
+];
+
+export default function Loader() {
+  const [currentText, setCurrentText] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % loadingTexts.length);
+    }, 2200);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-secondary text-white">
-      {/* Glow spinning ring */}
-      <motion.div
-        className="relative w-32 h-32 rounded-full border-4 border-gold border-t-transparent animate-spin glow-gold"
-        initial={{ rotate: 0 }}
-        animate={{ rotate: 360 }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: 1.4,
-        }}
-      />
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white relative overflow-hidden">
+      {/* Arka planda hareketli yıldızlar */}
+      <StarsBackground />
 
-      {/* Static Logo or Title in center */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        {/* Uncomment below if you want to use image logo */}
-        {/* <Image src="/images/logo.png" width={60} height={60} alt="MiraVerse Logo" className="mx-auto mb-2" /> */}
-        <motion.h1
-          className="text-xl sm:text-2xl font-bold text-gold tracking-wider"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          Loading MiraVerse...
-        </motion.h1>
-      </div>
+      <motion.div
+        className="z-10 text-2xl md:text-4xl font-bold text-gold glow-soft text-center px-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1.5,
+          ease: "easeInOut"
+        }}
+      >
+        {loadingTexts[currentText]}
+      </motion.div>
     </div>
   );
-};
+}
 
-export default Loader;
+function StarsBackground() {
+  const stars = new Array(70).fill(0);
+
+  return (
+    <div className="absolute inset-0 z-0">
+      {stars.map((_, index) => (
+        <motion.div
+          key={index}
+          className="absolute bg-white rounded-full opacity-20"
+          style={{
+            width: `${Math.random() * 3 + 1}px`,
+            height: `${Math.random() * 3 + 1}px`,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, 10, 0],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 4 + 3,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
