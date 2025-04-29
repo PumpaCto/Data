@@ -1,0 +1,34 @@
+/* Light Theme */
+html.light {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-primary: #FFD700;
+  --color-secondary: #1f2937;
+}
+
+/* Dark Theme */
+html.dark {
+  --color-bg: #1f2937;
+  --color-text: #ffffff;
+  --color-primary: #FFD700;
+  --color-secondary: #111111;
+}
+
+/* Apply Variables */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Example utility classes */
+.text-gold {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
