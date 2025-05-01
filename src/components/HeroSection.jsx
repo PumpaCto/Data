@@ -1,5 +1,3 @@
-// src/components/HeroSection.jsx
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,17 +10,16 @@ const motivationalQuotes = [
   "The future is not found. It's created.",
   "Anime meets blockchain, now unstoppable.",
   "You are early. Stay curious.",
-  "Crypto evolution starts here."
+  "Crypto evolution starts here.",
 ];
 
-// Navigation Links (About eklendi, Twitter kaldırıldı)
 const navigationLinks = [
   { name: "About", href: "/about" },
   { name: "Roadmap", href: "/roadmap" },
   { name: "Tokenomics", href: "/tokenomics" },
   { name: "Community", href: "/community" },
   { name: "NFTs", href: "/nft" },
-  { name: "Contact", href: "/contact" }
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function HeroSection() {
@@ -50,7 +47,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center py-32 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
-      
+
       {/* Background Stars */}
       <div className="absolute inset-0 z-0">
         {stars.map((_, index) => (
@@ -158,7 +155,8 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <Link href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+          {/* BUY NOW butonuna Pump.fun linki eklendi */}
+          <Link href="https://pump.fun/EUuuN8KakuSUsWMZRbaZWwQ6qEBsWoD2cx9GyDeipump" target="_blank" rel="noopener noreferrer">
             <button className="relative overflow-hidden btn-primary px-10 py-4 font-bold rounded-full shadow-xl transition-transform transform hover:scale-105">
               <span className="relative z-10">Buy Now</span>
               <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 opacity-20 blur-lg"></span>
